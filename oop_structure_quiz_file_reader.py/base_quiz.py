@@ -7,7 +7,7 @@ class BaseQuiz(ABC):
         self.filename = filename
         self.questions = self.load_questions()
 
-        def laod_questions(self):
+        def loadd_questions(self):
             if not os.path.exists(self.filename):
                 print(Fore.RED +  "⚠️ No quiz file found.")
                 return[]
