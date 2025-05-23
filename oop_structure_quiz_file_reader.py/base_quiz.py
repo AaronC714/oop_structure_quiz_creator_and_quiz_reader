@@ -11,3 +11,14 @@ class BaseQuiz(ABC):
             if not os.path.exists(self.filename):
                 print(Fore.RED +  "⚠️ No quiz file found.")
                 return[]
+            
+            with open(self.filename, "r", encoding="utf-8") as file:
+                content = file.read().strip()
+
+            raw_questions = content.split("-" * 40)
+            questions = []
+
+            for raw in raw_questions:
+                lines = [line.strip() for line in raw.strip().split("\n")]
+                if len(lines) < 6:
+                    continue
