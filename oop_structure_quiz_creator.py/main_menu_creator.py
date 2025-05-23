@@ -8,3 +8,13 @@ class QuizCreator:
     def __inti__(self):
         self.file_path = os.path.join(os.path.expanduser("~"), "Desktop", "quiz.txt")
         self.saver = QuestionSaver(self.file_path)
+
+    def get_question_from_user(self):
+        print ("\nEnter your multiple choice question: ")
+        question_text = input("Question: ")
+        choices = {
+            'chocie_a': input("Answer a: "),
+            'choice_b': input("Answer b: "),
+            'choice_c': input("Answer c: "),
+            'choice_d': input("Answer d: ")
+        }
