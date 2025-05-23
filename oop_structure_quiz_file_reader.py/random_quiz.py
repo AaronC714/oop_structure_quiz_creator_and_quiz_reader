@@ -39,3 +39,13 @@ class RandomQuiz(BaseQuiz):
 
             sleep(1.5)
             clear_screen()
+
+        print("\n" + "=" * 70)
+        print(Fore.MAGENTA + f"🏁 Quiz Over! You scored {score} out of {len(self.questions)}.\n")
+        if score == len(self.questions):
+            print(Fore.GREEN + "🌟 Perfect score! You're a quiz master!")
+        elif score >= len(self.questions) // 2:
+            print(Fore.CYAN + "💡 Good job! Keep practicing.")
+        else:
+            print(Fore.YELLOW + "📚 Keep studying and try again!")
+        print("=" * 70 + "\n")
