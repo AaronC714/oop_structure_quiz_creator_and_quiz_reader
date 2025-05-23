@@ -26,3 +26,13 @@ class QuizCreator:
             print("Invalid input. Please enter one of a, b, c, or d. ")
 
         return Question(question_text, choices, correct)
+    
+    def run(self):
+        while True:
+            question = self.get_question_from_user()
+            self.saver.save_question(question)
+
+            cont = input("Do you want to add another question? (yes/no): ").lower()
+            if cont != 'yes':
+                print("Exiting. Questions saved to", self.file_path)
+                break
