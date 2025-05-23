@@ -9,3 +9,10 @@ class RandomQuiz(BaseQuiz):
         if not self.questions:
             print ("No questions found for the quiz.")
             return
+        
+        clear_screen()
+        print("\n" + "🎉 Welcome to the Random Quiz Challenge! 🎉".center(70))
+        print("Answer the questions below and test your knowledge!\n".center(70))
+
+        random.shuffle(self.questions)
+        score = 0
