@@ -36,3 +36,7 @@ class QuizCreator:
             if cont != 'yes':
                 print("Exiting. Questions saved to", self.file_path)
                 break
+
+if __name__ == "__main__":
+    creator = QuizCreator()
+    creator.run
