@@ -39,3 +39,6 @@ class BaseQuiz(ABC):
             })
 
         return questions
+    
+    def start(self):
+        pass
