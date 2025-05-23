@@ -18,3 +18,11 @@ class QuizCreator:
             'choice_c': input("Answer c: "),
             'choice_d': input("Answer d: ")
         }
+
+        while True:
+            correct = input ("Which is the correct answer? (a/b/c/d): ").lower()
+            if correct in choices:
+                break
+            print("Invalid input. Please enter one of a, b, c, or d. ")
+
+        return Question(question_text, choices, correct)
