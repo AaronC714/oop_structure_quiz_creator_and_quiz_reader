@@ -7,23 +7,23 @@ class BaseQuiz(ABC):
         self.filename = filename
         self.questions = self.load_questions()
 
-        def load_questions(self):
-            if not os.path.exists(self.filename):
-                print(Fore.RED +  "⚠️ No quiz file found.")
-                return[]
+    def load_questions(self):
+        if not os.path.exists(self.filename):
+            print(Fore.RED +  "⚠️ No quiz file found.")
+            return[]
             
-            with open(self.filename, "r", encoding="utf-8") as file:
-                content = file.read().strip()
+        with open(self.filename, "r", encoding="utf-8") as file:
+            content = file.read().strip()
 
-            raw_questions = content.split("-" * 40)
-            questions = []
+        raw_questions = content.split("-" * 40)
+        questions = []
 
-            for raw in raw_questions:
-                lines = [line.strip() for line in raw.strip().split("\n")]
-                if len(lines) < 6:
-                    continue
+        for raw in raw_questions:
+            lines = [line.strip() for line in raw.strip().split("\n")]
+            if len(lines) < 6:
+                continue
 
-                question = lines[0].replace("Question: ", "")
+            question = lines[0].replace("Question: ", "")
             choices = {
                 'a': lines[1].replace("a) ", ""),
                 'b': lines[2].replace("b) ", ""),
@@ -39,6 +39,6 @@ class BaseQuiz(ABC):
             })
 
             return questions
-    
+        
     def start(self):
         pass
