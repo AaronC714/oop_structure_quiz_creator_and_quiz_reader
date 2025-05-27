@@ -1,4 +1,4 @@
-from .file_writer import FileWriter
+from file_writer import FileWriter
 
 class QuestionSaver(FileWriter):
     def save_question(self, question):
