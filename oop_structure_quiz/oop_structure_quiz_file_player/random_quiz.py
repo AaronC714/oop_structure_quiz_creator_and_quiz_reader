@@ -17,10 +17,10 @@ class random_quiz(BaseQuiz):
         random.shuffle(self.questions)
         score = 0
 
-        for index, q in enumerate(self.questions, 1):
+        for index, question_text in enumerate(self.questions, 1):
             print(Style.BRIGHT + f"\n{'='*70}")
-            print(Fore.CYAN + f"Question {index}: {q['question']}\n")
-            for key, text in q['choices'].items():
+            print(Fore.CYAN + f"Question {index}: {question_text['question']}\n")
+            for key, text in question_text['choices'].items():
                 print(f"  {key}) {text}")
 
             print("\n" + "-" * 70)
@@ -30,12 +30,12 @@ class random_quiz(BaseQuiz):
                     break
                 print(Fore.RED + "❌ Invalid choice. Please select a, b, c, or d.")
 
-            if answer == q['correct']:
+            if answer == question_text['correct']:
                 print(Fore.GREEN + "✅ Correct!")
                 score += 1
             else:
-                correct_option = q['correct']
-                print(Fore.RED + f"❌ Incorrect. The correct answer was '{q['choices'][correct_option]}'")
+                correct_option = question_text['correct']
+                print(Fore.RED + f"❌ Incorrect. The correct answer was '{question_text['choices'][correct_option]}'")
 
             sleep(1.5)
             clear_screen()
