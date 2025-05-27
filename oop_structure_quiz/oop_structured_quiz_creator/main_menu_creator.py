@@ -33,12 +33,12 @@ class QuizCreator:
             self.saver.save_question(question)
 
             while True:
-                cont = input("Do you want to add another question? (yes/no): ").lower()
-                if cont in ['yes', 'no']:
+                continue_user_input = input("Do you want to add another question? (yes/no): ").lower()
+                if continue_user_input in ['yes', 'no']:
                     break
                 print("Invalid input. Please type 'yes' or 'no'.")
 
-            if cont == 'no':
+            if continue_user_input == 'no':
                 print("Exiting. Questions saved to", self.file_path)
                 break
 
